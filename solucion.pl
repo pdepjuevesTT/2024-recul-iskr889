@@ -22,11 +22,11 @@ esCopada(inmueble(_,dpto(Amb,Banio),_,_)):-
 Amb>3,
 Banio>1.
 
-esCopada(inmueble(_,casa(espacio),_,_)):-
-espacio>100.
+esCopada(inmueble(_,casa(Espacio),_,_)):-
+Espacio>100.
 
-esCopada(inmueble(_,loft(anio),_,_)):-
-anio>2015.
+esCopada(inmueble(_,loft(Anio),_,_)):-
+Anio>2015.
 
 barrioCopado(Barrio):-
 barrio(Barrio),
