@@ -37,11 +37,11 @@ forall(inmueble(_,Propiedad,Barrio,_), esCopada(inmueble(_,Propiedad,_,_))).
 esBarato(inmueble(_,dpto(Amb,_),_,_)):-
 Amb<3.
 
-esBarato(inmueble(_,casa(espacio),_,_)):-
-espacio<90.
+esBarato(inmueble(_,casa(Espacio),_,_)):-
+Espacio<90.
 
-esBarato(inmueble(_,loft(anio),_,_)):-
-anio<2005.
+esBarato(inmueble(_,loft(Anio),_,_)):-
+Anio<2005.
 
 barrioCaro(Barrio):-
     barrio(Barrio),
