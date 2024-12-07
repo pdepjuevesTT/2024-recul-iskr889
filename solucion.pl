@@ -53,8 +53,12 @@ esSuficiente(PlataDispo,Precio,Resto):-
 PlataDispo >= Precio,
 Resto is Precio - PlataDispo.
 
-comprarInmueble(PlataDispo,Resto,ListPropiedades):-
-findall(inmueble(_,Propiedad,Barrio,Precio),esSuficiente(PlataDispo,Precio,Resto),ListPropiedades).
+comprarInmueble(PlataDispo,Precio, Resto,ListPropiedades):-
+findall(Precio, esSuficiente(PlataDispo,Precio,Resto),ListPropiedades).
+
+
+cantDePropiedadesQuePuedeComprar(PlataDispo,Resto,ListPropiedades):-
+forall(inmueble(_,Propiedad,_,Precio),comprarInmueble(PlataDispo,Precio,Resto,ListPropiedades))
 
 
 sublista([],[]).
