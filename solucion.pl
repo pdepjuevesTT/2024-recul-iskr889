@@ -30,7 +30,7 @@ Anio>2015.
 
 barrioCopado(Barrio):-
 barrio(Barrio),
-forall(inmueble(_,Propiedad,Barrio,_), esCopada(inmueble(_,Propiedad,_,_))).
+forall(inmueble(_,Propiedad,Barrio,_), esCopada(Propiedad)).
 
 %3
 
@@ -45,7 +45,7 @@ Anio<2005.
 
 barrioCaro(Barrio):-
     barrio(Barrio),
-    forall(inmueble(_,Propiedad,Barrio,_), not(esBarato(inmueble(_,Propiedad,_,_)))).
+    forall(inmueble(_,Propiedad,Barrio,_), not(esBarato(Propiedad))).
 
 %4
 
