@@ -57,9 +57,6 @@ comprarInmueble(PlataDispo,Resto,ListPropiedades):-
 findall(inmueble(_,Propiedad,Barrio,Precio),esSuficiente(PlataDispo,Precio,Resto),ListPropiedades).
 
 
-cantDePropiedadesQuePuedeComprar(PlataDispo)
-
-
 sublista([],[]).
 sublista([_|Cola],Sublista):-sublista(Cola,Sublista).
 sublista([Cabeza|Cola],[Cabeza|Sublista]):-sublista(Cola,Sublista).
