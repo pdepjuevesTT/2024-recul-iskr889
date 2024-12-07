@@ -1,14 +1,14 @@
 %1
+%casas
 inmueble(persona(juan),casa(120),barrio(almagro),150000).
 inmueble(persona(fer),casa(110),barrio(flores),60000).
 
-
-
+%departamentos
 inmueble(persona(nico),dpto(3,2),barrio(almagro),80000).
 inmueble(persona(alf),dpto(3,1),barrio(almagro),75000).
 inmueble(persona(vale),dpto(4,1),barrio(flores),95000).
 
-
+%lofts
 inmueble(persona(julian),anio(2000),barrio(almagro),140000).
 
 persona(felipe).
@@ -49,7 +49,22 @@ barrioCaro(Barrio):-
 
 %4
 
-comprarCasa(PlataDispo,)
+esSuficiente(PlataDispo,Precio,Resto):-
+PlataDispo >= Precio,
+Resto is Precio - PlataDispo.
+
+comprarInmueble(PlataDispo,Resto,ListPropiedades):-
+findall(inmueble(_,Propiedad,Barrio,Precio),esSuficiente(PlataDispo,Precio,Resto),ListPropiedades).
+
+
+cantDePropiedadesQuePuedeComprar(PlataDispo)
+
+
+sublista([],[]).
+sublista([_|Cola],Sublista):-sublista(Cola,Sublista).
+sublista([Cabeza|Cola],[Cabeza|Sublista]):-sublista(Cola,Sublista).
+
+
 
 
 
